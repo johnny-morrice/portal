@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 REMOTE=$1
 
@@ -9,7 +9,11 @@ fi
 
 CLEAN_REMOTE=$(echo $REMOTE | tr -d /)
 
-klist -t
+if hash klist 2>/dev/null; then
+    klist -t
+else
+    true
+fi
 if [[ $? -ne 0 ]]; then
     kinit
 fi
