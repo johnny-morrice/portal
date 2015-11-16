@@ -31,7 +31,7 @@ you@foo$ ./portal/gateway-forward.sh protected.machine.foo.org 36525
 In another terminal window on your machine
 
 ```
-ssh localhost -p36525
+you@home$ ssh localhost -p36525
 
 Welcome to protected.machine.foo.org
 ```
@@ -43,14 +43,13 @@ and `portal/refresh.sh` provide an easy idiom for mounting remote filesystems
 over ssh.
 
 ```
-mkdir another.system.on.lan
-./portal/mount.sh another.system.on.lan
-
-ls another.system.on.lan # All your precious remote files!
+you@home$ mkdir another.system.on.lan
+you@home$ ./portal/mount.sh another.system.on.lan
+you@home$ ls another.system.on.lan # All your precious remote files!
 
 # If for any reason your connection becomes flaky (although there is probably a
 # software cause for the flakiness)
-./portal/refresh.sh another.system.on.lan
+you@home$ ./portal/refresh.sh another.system.on.lan
 ```
 
 ## Requirements for mounting remote filesystems
@@ -62,8 +61,8 @@ the FUSE driver necessary for `sshfs`.
 
 ## Gateway configuration
 
-`portal/gateway-forward.sh expects a usable address to be written into
-`$HOME/.dev_machine.txt.
+`portal/gateway-forward.sh` expects a usable address to be written into
+`$HOME/.dev_machine.txt.`
 
 The idea being that developers should forward connections through their own
 machine.
