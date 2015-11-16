@@ -14,18 +14,26 @@ git clone https://github.com/johnnymorrice/portal.git
 
 ## Accessing hidden machines
 
-``` # Forward a port on the gateway to your own machine you@home$
-./portal/forward.sh gateway.foo.org 36525
+```
+
+# Forward a port on the gateway to your own machine
+you@home$ ./portal/forward.sh gateway.foo.org 36525
 
 Welcome to Foo Gateway!
 
-# Assuming there is a copy of portal installed on the gateway # Forward SSH on a
-LAN machine to a port on this machine you@foo$ ./portal/gateway-forward.sh
-protected.machine.foo.org 36525
+# Assuming there is a copy of portal installed on the gateway, forward SSH on a
+# LAN machine to a port on this machine
 
-# In another terminal window on your machine ssh localhost -p36525
+you@foo$ ./portal/gateway-forward.sh protected.machine.foo.org 36525
+```
 
-Welcome to protected.machine.foo.org ```
+In another terminal window on your machine
+
+```
+ssh localhost -p36525
+
+Welcome to protected.machine.foo.org
+```
 
 ## Mounting remote filesystems
 
@@ -33,12 +41,15 @@ Assuming your local machine is on the correct network already, `portal/mount.sh`
 and `portal/refresh.sh` provide an easy idiom for mounting remote filesystems
 over ssh.
 
-``` mkdir another.system.on.lan ./portal/mount.sh another.system.on.lan
+```
+mkdir another.system.on.lan
+./portal/mount.sh another.system.on.lan
 
 ls another.system.on.lan # All your precious remote files!
 
-# If for any reason your connection becomes flaky # (although there is probably
-a software cause for the flakiness) ./portal/refresh.sh another.system.on.lan
+# If for any reason your connection becomes flaky (although there is probably a
+# software cause for the flakiness)
+./portal/refresh.sh another.system.on.lan
 ```
 
 ## Requirements for mounting remote filesystems
