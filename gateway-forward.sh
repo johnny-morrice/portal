@@ -10,4 +10,4 @@ fi
 
 ssh -L$PORT:$MACHINE:22 \
     -N \
-    $(<.user-machine)
+    $(<$HOME/.dev_machine.txt)
