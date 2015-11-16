@@ -4,7 +4,7 @@ This is a wrapper round ssh.  It enables a user to forward ports inside another
 network into her own machine.
 
 It deals with the case that the remote network gateway only allows access to
-certain machines, through which you may access additional LAN resources.
+certain machines.
 
 ## Download
 
