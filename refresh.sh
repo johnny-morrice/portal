@@ -8,4 +8,4 @@ if [[ -z $REMOTE ]]; then
 fi
 
 umount $REMOTE
-sshfs/mount.sh $REMOTE
+portal/mount.sh $REMOTE
