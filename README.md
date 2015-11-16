@@ -22,7 +22,8 @@ you@home$ ./portal/forward.sh gateway.foo.org 36525
 Welcome to Foo Gateway!
 
 # Assuming there is a copy of portal installed on the gateway, forward SSH on a
-# LAN machine to a port on this machine
+# LAN machine to a port on the gateway machine.  This creates a chain back to your
+# local machine.
 
 you@foo$ ./portal/gateway-forward.sh protected.machine.foo.org 36525
 ```
