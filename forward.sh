@@ -1,10 +1,11 @@
 #!/bin/bash
 
 REMOTE=$1
+PORT=$2
 
-if [[ -z $REMOTE ]]; then
-	echo "Usage: $0 REMOTE" 1>&2
+if [[ -z $REMOTE ]] || [[ -z $PORT]]; then
+	echo "Usage: $0 REMOTE PORT" 1>&2
 	exit 1
 fi
 
-ssh -L36525:localhost:36525 $REMOTE
+ssh -L$PORT:localhost:$PORT $REMOTE
