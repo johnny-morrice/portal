@@ -13,7 +13,7 @@ certain machines.
 ## Download
 
 ```
-git clone https://github.com/johnnymorrice/portal.git
+$ git clone https://github.com/johnnymorrice/portal.git
 ```
 
 ## Accessing hidden machines
