@@ -1,5 +1,4 @@
 #!/bin/bash
-set -e
 
 REMOTE=$1
 
@@ -19,6 +18,9 @@ if [[ $? -ne 0 ]]; then
     kinit
 fi
 
+if [[ $? -ne 0 ]]; then
+    exit 1;
+fi
 
 
 sshfs "$CLEAN_REMOTE:" $CLEAN_REMOTE
